@@ -1,0 +1,33 @@
+---
+# yamllint disable rule:line-length
+version: '3'
+
+tasks:
+  build:
+    desc: Creates a binary
+    cmds:
+      - pyinstaller pyinstaller.spec
+
+  release:
+    desc: Creates a Github release
+    deps: [build]
+    vars:
+      borgmatic_version:
+        sh: poetry show borgmatic | grep "version" | awk '{print $3}'
+    cmds:
+      - echo "Releasing {{.borgmatic_version}}"
+      - git tag -a latest -m {{.borgmatic_version}}
+      - >
+        github-release release
+        --user danihodovic
+        --repo borgmatic-binary
+        --tag {{.borgmatic_version}}
+        --name borgmatic
+        --description {{.borgmatic_version}}
+      - >
+        github-release upload
+        --user danihodovic
+        --repo borgmatic-binary
+        --tag {{.borgmatic_version}}
+        --name borgmatic
+        --file ./dist/borgmatic
