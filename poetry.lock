@@ -91,6 +91,14 @@ python-versions = "*"
 future = "*"
 
 [[package]]
+name = "pyelftools"
+version = "0.27"
+description = "Library for analyzing ELF files and DWARF debugging information"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pyinstaller"
 version = "4.3"
 description = "PyInstaller bundles a Python application and all its dependencies into a single package."
@@ -199,6 +207,17 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
+name = "staticx"
+version = "0.12.1"
+description = "Build static self-extracting app from dynamic executable"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+pyelftools = "*"
+
+[[package]]
 name = "urllib3"
 version = "1.26.4"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -214,7 +233,7 @@ brotli = ["brotlipy (>=0.6.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "8a7456835a6ab110165b2718b3f12f3747ca9f0eca6bfde89603614902637280"
+content-hash = "8c4fb1339e7db9f7ef5abb39468a3e0010d6cf5693162cfb2abf947c6e27b705"
 
 [metadata.files]
 altgraph = [
@@ -253,6 +272,10 @@ macholib = [
 ]
 pefile = [
     {file = "pefile-2019.4.18.tar.gz", hash = "sha256:a5d6e8305c6b210849b47a6174ddf9c452b2888340b8177874b862ba6c207645"},
+]
+pyelftools = [
+    {file = "pyelftools-0.27-py2.py3-none-any.whl", hash = "sha256:5609aa6da1123fccfae2e8431a67b4146aa7fad5b3889f808df12b110f230937"},
+    {file = "pyelftools-0.27.tar.gz", hash = "sha256:cde854e662774c5457d688ca41615f6594187ba7067af101232df889a6b7a66b"},
 ]
 pyinstaller = [
     {file = "pyinstaller-4.3-py3-none-any.whl", hash = "sha256:2d28fd7c45ec24bd02892c7cf84ae67103bb6200863a64d4a17521e191649d76"},
@@ -318,6 +341,10 @@ requests = [
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
     {file = "six-1.15.0.tar.gz", hash = "sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"},
+]
+staticx = [
+    {file = "staticx-0.12.1-py3-none-manylinux1_x86_64.whl", hash = "sha256:d6b89882c511d66a0f4ae9a22baeb60448bda92b7e4886545d3a460cacdaaf8d"},
+    {file = "staticx-0.12.1.tar.gz", hash = "sha256:b3316038d546c5ebbaba5a1f1f6a81979f50c3c5e7b9077c574aebf3a4b7e660"},
 ]
 urllib3 = [
     {file = "urllib3-1.26.4-py2.py3-none-any.whl", hash = "sha256:2f4da4594db7e1e110a944bb1b551fdf4e6c136ad42e4234131391e21eb5b0df"},

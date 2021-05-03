@@ -6,7 +6,10 @@ tasks:
   build:
     desc: Creates a binary
     cmds:
-      - pyinstaller pyinstaller.spec
+      - docker build . -t borgmatic-builder
+      - >
+        container=$(docker run --rm -d borgmatic-builder sleep 5) &&
+        docker cp $container:/app/dist/borgmatic .
 
   release:
     desc: Creates a Github release
@@ -30,4 +33,4 @@ tasks:
         --repo borgmatic-binary
         --tag {{.borgmatic_version}}
         --name borgmatic
-        --file ./dist/borgmatic
+        --file ./borgmatic

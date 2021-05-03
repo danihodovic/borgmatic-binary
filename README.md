@@ -16,3 +16,5 @@ chmod +x /tmp/borgmatic
 Tested on:
 
 - Ubuntu 20.04
+- Ubuntu 18.04
+- Ubuntu 16.04
