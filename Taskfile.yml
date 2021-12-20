@@ -33,4 +33,4 @@ tasks:
         --repo borgmatic-binary
         --tag {{.borgmatic_version}}
         --name borgmatic
-        --file ./dist/borgmatic
+        --file ./borgmatic
