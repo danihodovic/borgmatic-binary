@@ -12,6 +12,6 @@ COPY ./pyproject.toml ./poetry.lock /app/
 
 RUN poetry install
 
-COPY . /app/
+COPY main.py pyinstaller.spec /app/
 
 RUN eval "$(pyenv init -)" && pyinstaller pyinstaller.spec

@@ -10,7 +10,7 @@ python = "^3.8"
 staticx = "^0.12.1"
 
 [tool.poetry.dev-dependencies]
-borgmatic = "^1.5.13"
+borgmatic = "^1.5.21"
 pyinstaller = "^4.3"
 
 [build-system]
